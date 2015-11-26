@@ -15,10 +15,10 @@
 		<nav>
 			<ul>
 				<li>Administration</li>
-				<li><a href="index.php" title="">Géneral</a></li>
-				<li><a href="" title="">Slider</a></li>
-				<li><a href="" title="">Contenu de la Home page</a></li>
-				<li><a href="" title="">Portfolio</a></li>
+				<li><a href="index.php?page=general" title="">Géneral</a></li>
+				<li><a href="index.php?page=slider" title="">Slider</a></li>
+				<li><a href="index.php?page=content" title="">Contenu de la Home page</a></li>
+				<li><a href="index.php?page=portfolio" title="">Portfolio</a></li>
 			</ul>
 		</nav>
 		<section>
