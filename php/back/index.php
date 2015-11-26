@@ -2,7 +2,7 @@
 	
 	require_once '../../inc/connexion.php';
 	require_once '../../inc/functions.php';
-	require_once '../../inc/general.php';
+	
 
 	
 ?>
@@ -13,13 +13,13 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Administration</title>
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
 	<main>
 		<nav>
 			<ul>
-				<li>Administration</li>
+				<li><a href="#">Administration</a></li>
 				<li><a href="index.php?page=general" title="">Géneral</a></li>
 				<li><a href="index.php?page=slider" title="">Slider</a></li>
 				<li><a href="index.php?page=content" title="">Contenu de la Home page</a></li>

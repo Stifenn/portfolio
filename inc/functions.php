@@ -3,7 +3,7 @@
 	//fonction qui insert le nom
 	function insertName($pdo, $firstname, $lastname){
 
-		$sql = 'INSERT INTO users (lastname, firstname) VALUES(:lastname, :firstname);';
+		$sql = 'INSERT INTO user (lastname, firstname) VALUES(:lastname, :firstname);';
 		$stmt = $pdo->prepare($sql);
 		$stmt->bindValue(':lastname', $lastname);
 		$stmt->bindValue(':firstname', $firstname);
@@ -11,7 +11,7 @@
 	}
 	// fonction qui met à jour le nom 
 	function updateName($pdo, $firstname, $lastname){
-		$sql = 'UPDATE users SET lastname = :lastname, firstname = :firstname WHERE id = 1' ;
+		$sql = 'UPDATE user SET lastname = :lastname, firstname = :firstname WHERE id = 1' ;
 		$stmt = $pdo->prepare($sql);
 		$stmt->bindValue(':lastname', $lastname);
 		$stmt->bindValue(':firstname', $firstname);
@@ -20,7 +20,7 @@
 	}
 	//fonction qui récupere le nom 
 	function recupName($pdo) {
-		$sql = 'SELECT id, lastname, firstname FROM Users' ;
+		$sql = 'SELECT id, lastname, firstname FROM user' ;
 		$stmt = $pdo->prepare($sql);
 		$stmt->execute();
 

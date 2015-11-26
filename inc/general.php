@@ -10,9 +10,11 @@
 ?>
  <form action="#" method="post" accept-charset="utf-8">
 	<label for="firstname">Votre Prénom: </label>
-	 <input type="text" name="firstname" value="<?php echo $oldName['firstname'] ?>" placeholder="Prénom">
+	 <input type="text" name="firstname" value="<?php echo $oldName['firstname'] ?>" placeholder="Prénom"><br>
+
 	<label for="lastname">Votre Nom: </label>
-	 <input type="text" name="lastname" value="<?php echo $oldName['lastname'] ?>" placeholder="Nom">
+	 <input type="text" name="lastname" value="<?php echo $oldName['lastname'] ?>" placeholder="Nom"><br>
+
 	 <input type="submit" name="send" value="Envoyer">
 </form>
 <?php
@@ -41,7 +43,7 @@
 		    	echo 'Le fichier n\'est pas une image';
 		    } else {
 			    // Renommer nom du fichier
-			    $path = '../img/avatar' . '.' . $extFoundInArray;
+			    $path = '../../img/avatar' . '.' . $extFoundInArray;
 				$moved = move_uploaded_file($_FILES['my-file']['tmp_name'], $path);
 				if(!$moved) {
 					echo 'Erreur lors de l\'enregistrement';
@@ -52,13 +54,16 @@
 
 ?>
 
-
 	<!-- CECI EST UN FORMULAIRE POUR UPLOAD DES AVATARS MAIS LA TAILLE SERA MODIFIER EN CSS -->
 <form enctype="multipart/form-data" action="#" method="post">
 	<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
 	Sélectionner le fichier : <input name="my-file" type="file" />
 	<input type="submit" name="send-file" value="Envoyer le fichier" />
-	<?php echo "<img src=".$path." alt=\"avatar\" />"; ?>
+	<?php 
+	if (isset($path)) {
+	echo '<img src="'.$path.'" alt=\"avatar\" />'; } ?>
+	
+	
 </form>
 
 
