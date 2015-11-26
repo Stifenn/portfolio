@@ -1,3 +1,4 @@
+
 <?php 
 
 	function insertName($pdo, $firstname, $lastname){
@@ -31,3 +32,7 @@
 	}
 
 
+	// function qui renvoi le type de la page
+	function get_page(){
+		 return $_GET['page'];
+	}
