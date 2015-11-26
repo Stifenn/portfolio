@@ -33,3 +33,8 @@
 	function get_page(){
 		 return $_GET['page'];
 	}
+
+	// function qui récupère les images pour le slider en DBB
+	function get_image($pdo, $id){
+		
+	}
