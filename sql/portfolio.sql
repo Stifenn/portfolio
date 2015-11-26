@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 26 Novembre 2015 à 14:42
+-- Généré le :  Jeu 26 Novembre 2015 à 14:52
 -- Version du serveur :  5.6.25
 -- Version de PHP :  5.6.11
 
@@ -19,6 +19,32 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `portfolio`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `categorie`
+--
+
+CREATE TABLE IF NOT EXISTS `categorie` (
+  `id` int(11) NOT NULL,
+  `label` varchar(150) NOT NULL,
+  `nom` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `image_portfolio`
+--
+
+CREATE TABLE IF NOT EXISTS `image_portfolio` (
+  `id` int(11) NOT NULL,
+  `label` varchar(150) NOT NULL,
+  `chemin` varchar(255) NOT NULL,
+  `id_categorie` int(11) NOT NULL,
+  `id_user` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -50,6 +76,18 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 --
+-- Index pour la table `categorie`
+--
+ALTER TABLE `categorie`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `image_portfolio`
+--
+ALTER TABLE `image_portfolio`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `image_slider`
 --
 ALTER TABLE `image_slider`
@@ -65,6 +103,16 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour les tables exportées
 --
 
+--
+-- AUTO_INCREMENT pour la table `categorie`
+--
+ALTER TABLE `categorie`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `image_portfolio`
+--
+ALTER TABLE `image_portfolio`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `image_slider`
 --
