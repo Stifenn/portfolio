@@ -8,6 +8,7 @@
 		$stmt->bindValue(':firstname', $firstname);
 		$stmt->execute();
 	}
+
 	// fonction qui met à jour le nom 
 	function updateName($pdo, $firstname, $lastname){
 		$sql = 'UPDATE users SET lastname = :lastname, firstname = :firstname WHERE id = 1' ;
@@ -15,8 +16,8 @@
 		$stmt->bindValue(':lastname', $lastname);
 		$stmt->bindValue(':firstname', $firstname);
 		$stmt->execute();
-
 	}
+
 	//fonction qui récupere le nom 
 	function recupName($pdo) {
 		$sql = 'SELECT id, lastname, firstname FROM Users' ;
@@ -34,6 +35,12 @@
 	}
 
 	// function qui récupère les images pour le slider en DBB
-	function get_image($pdo, $id){
-		
+	function get_image_slider($pdo, $id_user){
+		$sql = 'SELECT chemin, label FROM image_slider WHERE id_user = :id_user' ;
+		$stmt = $pdo->prepare($sql);
+		$stmt->bindValue(':id_user', $id_user);
+		$stmt->execute();
+
+		$result = $stmt->fetch();
+		return $result;
 	}
