@@ -2,6 +2,8 @@
 	
 	require_once '../../inc/connexion.php';
 	require_once '../../inc/functions.php';
+	require_once '../../inc/general.php';
+
 	
 ?>
 
