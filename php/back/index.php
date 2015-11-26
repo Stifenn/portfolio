@@ -1,5 +1,10 @@
 <?php
 	
+	require_once '../../inc/connexion.php';
+	require_once '../../inc/functions.php';
+	require_once '../../inc/general.php';
+
+	
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +27,24 @@
 			</ul>
 		</nav>
 		<section>
-			
+
+		<?php  
+			// on regarde sur quel type de page on se trouve
+			if ( isset($_GET['page']) && !empty($_GET['page'])) {
+				// on appelle la fonction get_page() qui récupère le type de la page
+				$type_page = get_page();
+				// on regarde si le fichier existe
+				if (file_exists ('../../inc/'. $type_page .'.php' )) {
+					// si le fichier existe on l'inclus
+					include_once '../../inc/'. $type_page.'.php';
+				} else { // si le fichier n'existe pas on va sur l'accueil
+					include_once '../../inc/404.php';
+				}
+			} else {
+				include_once '../../inc/general.php';
+			}
+		?>
+
 		</section>
 	</main>
 </body>
