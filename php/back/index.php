@@ -17,16 +17,16 @@
 </head>
 <body>
 	<main>
-		<nav>
+		<nav class="container_nav">
 			<ul>
-				<li><a href="#">Administration</a></li>
+				<li><a href ="#" >Administration</a></li>
 				<li><a href="index.php?page=general" title="">Géneral</a></li>
 				<li><a href="index.php?page=slider" title="">Slider</a></li>
 				<li><a href="index.php?page=content" title="">Contenu de la Home page</a></li>
 				<li><a href="index.php?page=portfolio" title="">Portfolio</a></li>
 			</ul>
 		</nav>
-		<section>
+		<section class="container_section">
 
 		<?php  
 			// on regarde sur quel type de page on se trouve

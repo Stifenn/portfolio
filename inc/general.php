@@ -8,7 +8,7 @@
 	}
  		$oldName = recupName($pdo);
 ?>
- <form action="#" method="post" accept-charset="utf-8">
+ <form  action="#" method="post" accept-charset="utf-8">
 	<label for="firstname">Votre Prénom: </label>
 	 <input type="text" name="firstname" value="<?php echo $oldName['firstname'] ?>" placeholder="Prénom"><br>
 
@@ -55,10 +55,10 @@
 ?>
 
 	<!-- CECI EST UN FORMULAIRE POUR UPLOAD DES AVATARS MAIS LA TAILLE SERA MODIFIER EN CSS -->
-<form enctype="multipart/form-data" action="#" method="post">
+<form class="form_image"enctype="multipart/form-data" action="#" method="post">
 	<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
-	Sélectionner le fichier : <input name="my-file" type="file" />
-	<input type="submit" name="send-file" value="Envoyer le fichier" />
+	<input name="my-file" type="file" /><br>
+	<input type="submit" name="send-file" value="Envoyer le fichier" /><br>
 	<?php 
 	if (isset($path)) {
 	echo '<img src="'.$path.'" alt=\"avatar\" />'; } ?>
