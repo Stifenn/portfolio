@@ -20,7 +20,7 @@
 
 	//fonction qui récupere le nom 
 	function recupName($pdo) {
-		$sql = 'SELECT id, lastname, firstname FROM Users' ;
+		$sql = 'SELECT id, lastname, firstname FROM user' ;
 		$stmt = $pdo->prepare($sql);
 		$stmt->execute();
 
@@ -41,6 +41,6 @@
 		$stmt->bindValue(':id_user', $id_user);
 		$stmt->execute();
 
-		$result = $stmt->fetch();
+		$result = $stmt->fetchAll();
 		return $result;
 	}
